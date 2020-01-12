@@ -2,3 +2,4 @@ node_modules
 package-lock.json
 *.db
 *.log
+build/9cc869850bc6ace143c0.hot-update.json
