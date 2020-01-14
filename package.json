@@ -23,7 +23,8 @@
     "db:seed": "node_modules/.bin/sequelize db:seed:all",
     "postinstall": "npm run db:create",
     "start": "concurrently \"webpack-dev-server --mode development\" \"node api\"",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --ext .js,.vue src"
   },
   "jest": {
     "testURL": "http://localhost"
@@ -59,7 +60,11 @@
     "webpack-dev-server": "^3.1.14"
   },
   "devDependencies": {
+    "acorn": "^7.1.0",
     "axios": "^0.19.1",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-vue": "^6.1.2",
     "vue-style-loader": "^4.1.2"
   }
 }

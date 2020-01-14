@@ -1,8 +1,9 @@
 <template>
-	<div class="page-inner" v-bind:class="{'site-container' : $route.name !== 'homepage'}">
+	<div class="page-inner" 
+		:class="{'site-container' : $route.name !== 'homepage'}">
 		<template v-if="!$root.loading">
-			<site-header v-bind:site-content="$root.siteContent" ></site-header>
-			<router-view v-bind:site-content="$root.siteContent" ></router-view>
+			<site-header :site-content="$root.siteContent" />
+			<router-view :site-content="$root.siteContent" />
 		</template>
 	</div>
 </template>
@@ -14,4 +15,5 @@
 			'site-header': SiteHeader,
 		}
 	}
+
 </script>

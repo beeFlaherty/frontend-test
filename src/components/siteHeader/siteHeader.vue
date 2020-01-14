@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<header  class="site-header">
+		<header class="site-header">
             <h1> To Do List App </h1>
 		</header>
 	</div>
@@ -8,6 +8,8 @@
 
 <script>
 	export default {
-		props: ['siteContent']
+		props: {
+			'siteContent': Object
+		}
 	}
 </script>

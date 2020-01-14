@@ -20,7 +20,6 @@ const apiBaseUrl = 'http://localhost:4000/api/task'
 
 const vm = new Vue({ 
 	router,
-	render: h => h(App),
 	data() {
 		return {
 			loading: true,
@@ -41,5 +40,6 @@ const vm = new Vue({
 				console.log('error - unable to load data file');
 				console.log(error);
 			});
-	}
+	},
+	render: h => h(App)
 }).$mount('#app');

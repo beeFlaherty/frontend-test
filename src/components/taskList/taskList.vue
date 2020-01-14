@@ -1,8 +1,9 @@
 <template>
 	<div>
-		<header  class="site-header">
+		<header class="site-header">
             <ul id="example-1">
-  				<li v-for="task in siteContent.tasks">
+  				<li v-for="task in siteContent.tasks" 
+					:key="task">
     				{{ task.title }}
   				</li>
 			</ul>
@@ -13,6 +14,9 @@
 <script>
 
 	export default {
-		props: ['siteContent']
+		props: {
+			'siteContent': Object
+		}
 	}
+	
 </script>
