@@ -3,6 +3,17 @@
 
 //site variables and mixins
 @import "common/variables";
+@import "common/utilities";
 
 //Set up site base styles and elements
 @import "common/typography";
+@import "common/layout";
+
+
+//import components
+@import "../components/siteHeader/siteHeader";
+@import "../components/taskList/taskList";
+
+html {
+	box-sizing: border-box;
+}

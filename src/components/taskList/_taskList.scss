@@ -1,0 +1,81 @@
+.taskList {
+
+	$parent: &;
+
+	&__listItem {
+
+		position: relative;
+		font-size: 1.8rem;
+		margin-bottom: $verticalMarginList;
+		border-left: 5px solid $textColor;
+
+		&--high {
+			background: lighten($priorityHigh, 25%);
+			border-color: $priorityHigh;
+		}
+
+		&--medium {
+			background: lighten($priorityMedium, 25%);
+			border-color: $priorityMedium;
+		}
+
+		&--low {
+			background: lighten($priorityLow, 25%);
+			border-color: $priorityLow;
+		}
+	}
+
+	&__listItem__checkbox {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		display: inline-block;
+
+		+ #{$parent}__listItem__label::after {
+			content: none;
+		}
+
+		&:checked + #{$parent}__listItem__label {
+
+			text-decoration: line-through;
+
+			&::after {
+				content: "";
+			}
+		}
+	}
+
+	&__listItem__label {
+		position: relative;
+		display: block;
+		padding: $verticalPaddingList $horizontalPaddingList $verticalPaddingList 80px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 30px;
+			margin-top: -8px;
+			display: inline-block;
+			height: 16px;
+			width: 16px;
+			border: 1px solid;
+			background: #FFF;
+		}
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 32px;
+			margin-top: -6px;
+			content: "";
+			display: inline-block;
+			height: 6px;
+			width: 12px;
+			border-left: 2px solid;
+			border-bottom: 2px solid;
+			transform: rotate(-45deg);
+		}
+	}
+}

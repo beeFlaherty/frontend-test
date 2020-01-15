@@ -1,5 +1,5 @@
 <template>
-	<div class="page-inner"> 
+	<div class="row"> 
 		<task-list :site-content="$root.siteContent" />
 	</div>
 </template>

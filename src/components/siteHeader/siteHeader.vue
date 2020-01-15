@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<header class="site-header">
-            <h1> To Do List App </h1>
+	<div class="row">
+		<header class="siteHeader">
+            <h1 class="siteHeader__title"> Todo List </h1>
 		</header>
 	</div>
 </template>

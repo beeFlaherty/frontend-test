@@ -1,0 +1,8 @@
+.siteHeader {
+	border-top: $headerBorderWeight solid $headerBorderColor;
+	padding: $verticalPaddingHeader $horizontalPaddingHeader;
+
+	&__title {
+		font-size: 2.8rem;
+	}
+}

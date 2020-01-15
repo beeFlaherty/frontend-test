@@ -1,6 +1,5 @@
 <template>
-	<div class="page-inner" 
-		:class="{'site-container' : $route.name !== 'homepage'}">
+	<div class="container">
 		<template v-if="!$root.loading">
 			<site-header :site-content="$root.siteContent" />
 			<router-view :site-content="$root.siteContent" />

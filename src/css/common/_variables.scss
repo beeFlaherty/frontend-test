@@ -1,2 +1,30 @@
 //fonts
-$mainFont: 'Roboto', sans-serif;
+$mainFont: "Roboto", sans-serif;
+
+//colors
+$lightGrey: #EFECE9;
+$darkGrey: #333;
+
+$priorityHigh : #AF4949;
+$priorityLow: #559A9B;
+$priorityMedium: #F9D36B;
+
+//spacing
+$verticalPaddingHeader: 40px;
+$verticalMarginHeader: 10px;
+
+$horizontalPaddingHeader: 40px;
+$horizontalMarginHeader: 40px;
+
+$verticalPaddingList: 20px;
+$verticalMarginList: 10px;
+
+$horizontalPaddingList: 30px;
+$horizontalMarginList: 40px;
+
+//theme
+$pageBackground: $lightGrey;
+$textColor: $darkGrey;
+
+$headerBorderColor: $darkGrey;
+$headerBorderWeight: 10px;
