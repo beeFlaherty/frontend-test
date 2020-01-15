@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pkg = require('./package.json')
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 /*vue specific **/
 const { VueLoaderPlugin } = require('vue-loader');
@@ -40,7 +41,8 @@ module.exports = {
 			title: pkg.name,
 			template: './src/index.html',
 			filename: 'index.html'
-		})
+		}),
+		new StyleLintPlugin()
 	],
 	module: {
 		rules: [{
