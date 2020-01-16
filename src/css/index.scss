@@ -5,6 +5,9 @@
 @import "common/variables";
 @import "common/utilities";
 
+//vendor css
+@import "vendor/axios-progress";
+
 //Set up site base styles and elements
 @import "common/typography";
 @import "common/layout";

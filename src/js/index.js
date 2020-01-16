@@ -3,6 +3,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routeData from './routes';
 import axios from 'axios';
+import { loadProgressBar } from 'axios-progress-bar';
 import App from '../views/App.vue';
 import '../css/index.scss';
 
@@ -28,7 +29,7 @@ const vm = new Vue({
 	},
 	created() {
 		this.loading = true;
-
+		loadProgressBar();
 		axios.get(apiBaseUrl)
 			.then((response) => {
 				this.siteContent.tasks = response.data;
