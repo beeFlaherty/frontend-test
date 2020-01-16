@@ -7,8 +7,12 @@
 					:key="task.id"
 					:class="`taskList__listItem taskList__listItem--${priorityWord(task.importance)}`">
 					<input :id="`task-${index}`"
+						v-model="task.isDone"
 						type="checkbox"
-						class="taskList__listItem__checkbox"> 
+						true-value="true"
+						false-value="false"
+						class="taskList__listItem__checkbox"
+						@change="statusChange($event, task)"> 
     				<label :for="`task-${index}`"
 						class="taskList__listItem__label">
 						{{ task.title }} 
@@ -20,10 +24,14 @@
 </template>
 
 <script>
+	import axios from 'axios';
+	import { loadProgressBar } from 'axios-progress-bar';
 
 	export default {
-		props: {
-			'siteContent': Object
+		computed: {
+			'siteContent'() {
+    			return this.$store.state.siteContent
+  			}
 		},
 		methods: {
 			priorityWord: function(priority) {
@@ -40,6 +48,16 @@
 				}
 
 				return priorityText;
+			},
+			statusChange(event, task){
+				loadProgressBar();
+				axios.patch(`${this.$root.apiBaseUrl}/${task.id}`, {isDone: task.isDone})
+                	.then((response) => {   
+                    	console.log(response);
+                	})
+                	.catch(function(e){
+                    	console.log(e);
+                	});
 			}
 		}
 	}
