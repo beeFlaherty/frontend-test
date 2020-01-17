@@ -2,8 +2,8 @@
 		<section class="taskList" 
 			aria-labelledby="taskListLabel">
 			<h2 id="taskListLabel" class="sr-only">Todo List</h2>
-            <ul class="taskList__list">
-  				<li v-for="(task, index) in siteContent.tasks" 
+            <ul class="taskList__list" v-if="taskList.length > 0">
+  				<li v-for="(task, index) in taskList" 
 					:key="task.id"
 					:class="`taskList__listItem taskList__listItem--${priorityWord(task.importance)}`">
 					<input :id="`task-${index}`"
@@ -18,8 +18,13 @@
 						{{ task.title }} 
 						<span class="taskList__itemPriority sr-only">priority {{ priorityWord(task.importance) }} </span> 
 					</label>
+					<button class="taskList__delete" 
+						@click="deleteTask(task, index)"> Delete Me</button>
   				</li>
 			</ul>
+			<template v-else>
+				<p class="taskList__completed"> Tasks Completed</p>
+			</template>
 		</section>
 </template>
 
@@ -29,8 +34,8 @@
 
 	export default {
 		computed: {
-			'siteContent'() {
-    			return this.$store.state.siteContent
+			taskList: function() {
+    			return this.$store.state.tasks
   			}
 		},
 		methods: {
@@ -49,11 +54,21 @@
 
 				return priorityText;
 			},
-			statusChange(event, task){
+			statusChange: function(event, task){
 				loadProgressBar();
 				axios.patch(`${this.$root.apiBaseUrl}/${task.id}`, {isDone: task.isDone})
                 	.then((response) => {   
-                    	console.log(response);
+
+                	})
+                	.catch(function(e){
+                    	console.log(e);
+                	});
+			},
+			deleteTask: function(task, index){
+				loadProgressBar();
+				axios.delete(`${this.$root.apiBaseUrl}/${task.id}`)
+                	.then((response) => {   
+						this.$store.commit('deleteTaskFromList', task);
                 	})
                 	.catch(function(e){
                     	console.log(e);

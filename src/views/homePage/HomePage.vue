@@ -1,6 +1,6 @@
 <template>
 	<div class="row"> 
-		<task-list :site-content="$root.siteContent" />
+		<task-list/>
 	</div>
 </template>
 <script>

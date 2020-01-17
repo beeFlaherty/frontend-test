@@ -1,13 +1,18 @@
+import Vue from 'vue';
 export default {
 	state: {
-        siteContent: {}
+        tasks: []
 	},
 	mutations: {
-		loadTasks(state, tasks) {
-            state.siteContent.tasks = tasks;
+		loadTasks: function(state, tasks) {
+            state.tasks = tasks;
         },
-        updateTaskStatus(state, toUpdate){
-            console.log('from store', toUpdate)
+        deleteTaskFromList: function(state, task){
+            for (let i = 0; i < state.tasks.length; i++) {
+				if (state.tasks[i].id === task.id) {
+                    Vue.delete(state.tasks, i)
+				}
+			}
         }
 	}
 };
