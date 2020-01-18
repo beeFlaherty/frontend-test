@@ -6,7 +6,7 @@
 		</template>
 		<template v-if="$root.loading">
 			<div class="loading-message">
-				<p> Loading ...</p>
+				<p>Loading ...</p>
 			</div>
 		</template>
 	</div>

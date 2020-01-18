@@ -1,31 +1,53 @@
 <template>
-		<section class="taskList" 
-			aria-labelledby="taskListLabel">
-			<h2 id="taskListLabel" class="sr-only">Todo List</h2>
-            <ul class="taskList__list" v-if="taskList.length > 0">
-  				<li v-for="(task, index) in taskList" 
-					:key="task.id"
-					:class="`taskList__listItem taskList__listItem--${priorityWord(task.importance)}`">
-					<input :id="`task-${index}`"
-						v-model="task.isDone"
-						type="checkbox"
-						true-value="true"
-						false-value="false"
-						class="taskList__listItem__checkbox"
-						@change="statusChange($event, task)"> 
-    				<label :for="`task-${index}`"
-						class="taskList__listItem__label">
-						{{ task.title }} 
-						<span class="taskList__itemPriority sr-only">priority {{ priorityWord(task.importance) }} </span> 
-					</label>
-					<button class="taskList__delete" 
-						@click="deleteTask(task, index)"> Delete Me</button>
-  				</li>
-			</ul>
-			<template v-else>
-				<p class="taskList__completed"> Tasks Completed</p>
-			</template>
-		</section>
+	<section 
+		class="taskList" 
+		aria-labelledby="taskListLabel"
+	>
+		<h2 
+			id="taskListLabel" 
+			class="sr-only"
+		>
+			Todo List
+		</h2>
+		<ul 
+			v-if="taskList.length > 0"
+			class="taskList__list" 
+		>
+			<li 
+				v-for="(task, index) in taskList" 
+				:key="task.id"
+				:class="`taskList__listItem taskList__listItem--${priorityWord(task.importance)}`"
+			>
+				<input 
+					:id="`task-${index}`"
+					v-model="task.isDone"
+					type="checkbox"
+					true-value="true"
+					false-value="false"
+					class="taskList__listItem__checkbox"
+					@change="statusChange($event, task)"
+				>
+				<label 
+					:for="`task-${index}`"
+					class="taskList__listItem__label"
+				>
+					{{ task.title }} 
+					<span class="taskList__itemPriority sr-only">priority {{ priorityWord(task.importance) }} </span> 
+				</label>
+				<button 
+					class="taskList__delete" 
+					@click="deleteTask(task, index)"
+				>
+					Delete Me
+				</button>
+			</li>
+		</ul>
+		<template v-else>
+			<p class="taskList__completed">
+				Tasks Completed
+			</p>
+		</template>
+	</section>
 </template>
 
 <script>

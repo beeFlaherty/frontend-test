@@ -1,6 +1,6 @@
 <template>
 	<div class="row"> 
-		<task-list/>
+		<task-list />
 	</div>
 </template>
 <script>
@@ -8,9 +8,6 @@
 	export default {
 		components: {
 			'task-list': TaskList,
-		},
-		props: {
-			'siteContent': Object
 		}
 	}
 </script>
