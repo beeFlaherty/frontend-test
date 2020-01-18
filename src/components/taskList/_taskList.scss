@@ -1,9 +1,7 @@
 .taskList {
-
 	$parent: &;
 
 	&__listItem {
-
 		position: relative;
 		font-size: 1.8rem;
 		margin-bottom: $verticalMarginList;
@@ -37,11 +35,17 @@
 		}
 
 		&:checked + #{$parent}__listItem__label {
-
 			text-decoration: line-through;
 
 			&::after {
 				content: "";
+			}
+		}
+
+		&:focus + #{$parent}__listItem__label {
+			&::before {
+				box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+				outline: none;
 			}
 		}
 	}
@@ -60,7 +64,7 @@
 			display: inline-block;
 			height: 16px;
 			width: 16px;
-			border: 1px solid;
+			border: 1px solid $borderGrey;
 			background: #FFF;
 		}
 
@@ -73,9 +77,13 @@
 			display: inline-block;
 			height: 6px;
 			width: 12px;
-			border-left: 2px solid;
-			border-bottom: 2px solid;
+			border-left: 2px solid $textColor;
+			border-bottom: 2px solid $textColor;
 			transform: rotate(-45deg);
+		}
+
+		&:hover {
+			cursor: pointer;
 		}
 	}
 
@@ -88,8 +96,39 @@
 
 	&__delete {
 		position: absolute;
-		right: 40px;
-		height: 30px;
-		top: calc(50% - 15px);
+		right: 30px;
+		height: 20px;
+		width: 20px;
+		top: calc(50% - 10px);
+		border: 0;
+		background: transparent;
+
+		&::before,
+		&::after {
+			position: absolute;
+			left: 10px;
+			top: 0;
+			content: " ";
+			height: 20px;
+			width: 3px;
+			background-color: $textColor;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			&::before,
+			&::after {
+				background: #FFF;
+			}
+		}
 	}
 }

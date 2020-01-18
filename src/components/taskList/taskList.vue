@@ -38,7 +38,7 @@
 					class="taskList__delete" 
 					@click="deleteTask(task, index)"
 				>
-					Delete Me
+					<span class="sr-only">Delete Task</span>
 				</button>
 			</li>
 		</ul>
