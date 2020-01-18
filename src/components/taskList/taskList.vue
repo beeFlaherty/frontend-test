@@ -35,7 +35,7 @@
 					<span class="taskList__itemPriority sr-only">priority {{ priorityWord(task.importance) }} </span> 
 				</label>
 				<button 
-					class="taskList__delete" 
+					class="cross-button taskList__delete" 
 					@click="deleteTask(task, index)"
 				>
 					<span class="sr-only">Delete Task</span>

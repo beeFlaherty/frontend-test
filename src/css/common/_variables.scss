@@ -4,6 +4,7 @@ $mainFont: "Roboto", sans-serif;
 //colors
 $lightGrey: #EFECE9;
 $darkGrey: #333;
+$borderGrey: #AAA;
 
 $priorityHigh : #AF4949;
 $priorityLow: #559A9B;
@@ -22,12 +23,19 @@ $verticalMarginList: 10px;
 $horizontalPaddingList: 30px;
 $horizontalMarginList: 40px;
 
+$verticalFormPadding: 20px;
+$horizontalFormPadding: 20px;
+
 //theme
 $pageBackground: $lightGrey;
 $textColor: $darkGrey;
+$errorMsgColor: #DC143C;
+$errorBackground: #FEF1F4;
 
 $headerBorderColor: $darkGrey;
 $headerBorderWeight: 10px;
 
 $progressBarColor: #1B60C1;
 $progressBarHeight: 15px;
+
+$buttonBackground:#DAD7D4;

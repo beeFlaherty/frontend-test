@@ -1,8 +1,35 @@
 .siteHeader {
 	border-top: $headerBorderWeight solid $headerBorderColor;
-	padding: $verticalPaddingHeader $horizontalPaddingHeader;
+	padding: $verticalPaddingHeader $horizontalPaddingHeader+300px $verticalPaddingHeader $horizontalPaddingHeader;
+	position: relative;
 
 	&__title {
 		font-size: 2.8rem;
+	}
+
+	&__toggleButton {
+		position: absolute;
+		right: $horizontalPaddingHeader;
+		top: $verticalPaddingHeader;
+		font-size: 2rem;
+		font-weight: bold;
+		padding: 10px 20px 10px 50px;
+		max-width: 200px;
+
+		&::before,
+		&::after {
+			position: absolute;
+			left: 25px;
+			top: calc(50% - 10px);
+			content: " ";
+			height: 20px;
+			width: 3px;
+			background-color: $textColor;
+		}
+
+		&::before {
+			transform: rotate(90deg);
+		}
+
 	}
 }

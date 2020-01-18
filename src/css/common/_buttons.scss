@@ -1,0 +1,53 @@
+.button {
+	background: $buttonBackground;
+	transition: background-color 0.2s ease;
+	border-radius: 2rem;
+	text-align: center;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+		background: #FFF;
+	}
+
+	&:focus {
+		box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+		outline: none;
+	}
+}
+
+.cross-button {
+	position: relative;
+	height: 20px;
+	width: 20px;
+	border: 0;
+	background: transparent;
+
+	&::before,
+	&::after {
+		position: absolute;
+		left: 10px;
+		top: 0;
+		content: " ";
+		height: 20px;
+		width: 3px;
+		background-color: $textColor;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			background: #FFF;
+		}
+	}
+}

@@ -11,11 +11,13 @@
 //Set up site base styles and elements
 @import "common/typography";
 @import "common/layout";
+@import "common/buttons";
 
 
 //import components
 @import "../components/siteHeader/siteHeader";
 @import "../components/taskList/taskList";
+@import "../components/newTaskForm/newTaskForm";
 
 html {
 	box-sizing: border-box;
