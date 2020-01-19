@@ -6,7 +6,7 @@ export default {
 	},
 	mutations: {
 		loadTasks: function(state, tasks) {
-            state.tasks = tasks.sort((a, b) => parseFloat(a.importance) - parseFloat(b.importance));;
+            state.tasks = tasks.sort((a, b) => parseFloat(a.importance) - parseFloat(b.importance));
         },
         deleteTaskFromList: function(state, task) {
             for (let i = 0; i < state.tasks.length; i++) {
@@ -19,8 +19,8 @@ export default {
 			state.showForm = !state.showForm;
 		},
 		addTaskToList: function(state, task){
-			console.log(task);
 			state.tasks.push(task);
+			state.tasks = state.tasks.sort((a, b) => parseFloat(a.importance) - parseFloat(b.importance));
 		}
 	}
 };
