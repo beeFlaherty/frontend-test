@@ -55,7 +55,7 @@ module.exports = {
 		},
 		{
 			test: /\.js$/,
-			exclude: /(node_modules|bower_components)/,
+			
 			use: {
 				loader: 'babel-loader',
 			}
@@ -76,5 +76,11 @@ module.exports = {
 			loader: 'eslint-loader',
 			exclude: /node_modules/
 		}]
-	}
+	},
+	resolve: {
+		alias: {
+		  'vue$': 'vue/dist/vue.esm.js',
+		  '@': path.resolve(__dirname, 'src')
+		}
+	  }
 }
