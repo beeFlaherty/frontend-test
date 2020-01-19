@@ -2,7 +2,7 @@ import Vue from 'vue';
 export default {
 	state: {
 		tasks: [],
-		showForm: true
+		showForm: false
 	},
 	mutations: {
 		loadTasks: function(state, tasks) {
